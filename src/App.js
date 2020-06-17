@@ -1,9 +1,13 @@
-import React from 'react';
+import React from "react";
+import "./App.css";
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min.js";
+import { HeroCard } from "./Components/HeroCard/HeroCard";
 import './App.css';
 import { Header } from './Components/Header/Header';
 import { SearchBar } from './Components/SearchBar/SearchBar';
 import { FetchHeroes } from './Services/FetchData/FetchHeroes';
-import { MyTeamCards } from './Components/MyTeamCards/MyTeamCards';
+// import { MyTeamCards } from './Components/MyTeamCards/MyTeamCards';
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +17,7 @@ class App extends React.Component {
       filteredHeroes: []
     }
   }
+
   componentDidMount() {
     FetchHeroes()
       .then(data => {
@@ -32,7 +37,7 @@ class App extends React.Component {
         <Header />
         <SearchBar searchHeroes={this.searchHeroes} />
         {this.state.filteredHeroes.map(hero => (
-          < MyTeamCards avatar={hero.thumbnail.path} name={hero.name} />
+          < HeroCard avatar={hero.thumbnail.path} name={hero.name} />
         ))}
       </div >
     );
