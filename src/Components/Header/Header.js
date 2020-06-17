@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <Navbar
             alignLinks="right"
-            brand={<a className="brand-logo" href="#">Hero Team</a>}
+            brand={<a className="brand-logo">Hero Team</a>}
             centerChildren
             id="mobile-nav"
             menuIcon={<Icon>menu</Icon>}

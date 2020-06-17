@@ -6,7 +6,8 @@ import { HeroCard } from "./Components/HeroCard/HeroCard";
 import './App.css';
 import { Header } from './Components/Header/Header';
 import { SearchBar } from './Components/SearchBar/SearchBar';
-import { FetchHeroes } from './Services/FetchData/FetchHeroes';
+import { HeroServices } from './Services/FetchData/HeroServices';
+
 // import { MyTeamCards } from './Components/MyTeamCards/MyTeamCards';
 
 class App extends React.Component {
@@ -19,10 +20,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    FetchHeroes()
-      .then(data => {
-        this.setState({ searchedHeroes: data.data.results, filteredHeroes: data.data.results })
+    HeroServices()
+      .then(hero => {
+        this.setState({ searchedHeroes: hero, filteredHeroes: hero })
       })
+
   }
 
   searchHeroes = (text) => {
@@ -37,7 +39,7 @@ class App extends React.Component {
         <Header />
         <SearchBar searchHeroes={this.searchHeroes} />
         {this.state.filteredHeroes.map(hero => (
-          < HeroCard avatar={hero.thumbnail.path} name={hero.name} />
+          < HeroCard avatar={hero.avatar} name={hero.name} key={hero.id} />
         ))}
       </div >
     );

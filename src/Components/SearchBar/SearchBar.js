@@ -9,12 +9,12 @@ const SearchBar = ({ searchHeroes }) => {
 
     return (
         <nav>
-            <div class="nav-wrapper">
+            <div className="nav-wrapper">
                 <form>
-                    <div class="input-field">
+                    <div className="input-field">
                         <input id="search" type="search" required onChange={onSearch} />
-                        <label class="label-icon" for="search"></label>
-                        <i class="material-icons">close</i>
+                        <label className="label-icon" htmlFor="search"></label>
+                        <i className="material-icons">close</i>
                     </div>
                 </form>
             </div>
