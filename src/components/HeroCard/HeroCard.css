@@ -1,6 +1,7 @@
 .HeroCard {
   display: flex;
   flex-direction: column;
+  margin-top: 11.25px;
 }
 
 .HeroCard__Title {
@@ -11,7 +12,7 @@
 .HeroCard__Card-Image {
   display: block;
   margin: auto;
-  height: 200px;
+  height: 300px;
   width: 200px;
   border-radius: none;
 }
