@@ -1,12 +1,19 @@
 import React from 'react';
+import { FetchHeroes } from '../../Services/FetchData/FetchHeroes';
 
 class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchedHeroes: [{ name: "nenad" }, { name: "veljko" }, { name: "stefan" }, { name: "srdja" }],
-            filteredHeroes: [{ name: "nenad" }, { name: "veljko" }, { name: "stefan" }, { name: "srdja" }]
+            searchedHeroes: [],
+            filteredHeroes: []
         }
+    }
+    componentDidMount() {
+        FetchHeroes()
+            .then(data => {
+                this.setState({ searchedHeroes: data.data.results, filteredHeroes: data })
+            })
     }
 
     searchHeroes = (event) => {
