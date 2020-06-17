@@ -1,0 +1,18 @@
+.MyTeamCards__wrapper {
+  margin: auto;
+}
+
+.MyTeamCards__Cards {
+  display: flex;
+  border: 1px solid black;
+  align-items: center;
+}
+
+.MyTeamCards__img {
+  border-right: 1px solid black;
+  margin-right: 10px;
+}
+
+.MyTeamCards__text {
+  font-size: 50px;
+}
