@@ -1,8 +1,6 @@
 import React from "react";
 import "./HeroCard.css";
 
-import { Row, Col } from "react-materialize";
-
 const HeroCard = ({ avatar, name }) => {
   return (
     <div className="col s4">
@@ -14,7 +12,7 @@ const HeroCard = ({ avatar, name }) => {
             src={
               avatar
                 ? `${avatar}/portrait_small.jpg`
-                : "https://via.placeholder.com/200x300/FF0000/FFFFFF?Text=MARVEL.com"
+                : "https://via.placeholder.com/200x300/FF0000/FFFFFF?text=MARVEL.com"
             }
             alt="avatar"
           />
