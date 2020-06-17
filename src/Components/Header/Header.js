@@ -23,7 +23,6 @@ const Header = () => {
                 preventScrolling: true
             }}
         >
-
         </Navbar>
     )
 }
