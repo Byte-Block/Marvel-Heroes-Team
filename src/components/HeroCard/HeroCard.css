@@ -1,0 +1,29 @@
+.HeroCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.HeroCard__Title {
+  text-align: left;
+  padding: 5% 0 2.5% 2.5%;
+}
+
+.HeroCard__Card-Image {
+  display: block;
+  margin: auto;
+  height: 200px;
+  width: 200px;
+  border-radius: none;
+}
+
+.HeroCard__Image {
+  display: block;
+  width: 100%;
+  border-radius: 0px !important;
+}
+
+.HeroCard__Buttons {
+  border-top: none !important;
+  display: flex;
+  justify-content: space-evenly;
+}
