@@ -1,4 +1,4 @@
-.MyTeamCards__wrapper {
+.MyTeamCards__Wrapper {
   margin: auto;
 }
 
@@ -8,11 +8,11 @@
   align-items: center;
 }
 
-.MyTeamCards__img {
+.MyTeamCards__Img {
   border-right: 1px solid black;
   margin-right: 10px;
 }
 
-.MyTeamCards__text {
+.MyTeamCards__Text {
   font-size: 50px;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchBar.css';
 
 const SearchBar = ({ searchHeroes }) => {
 
@@ -8,7 +9,11 @@ const SearchBar = ({ searchHeroes }) => {
     }
 
     return (
+
+        <nav className="SearchBar">
+
         <nav>
+
             <div className="nav-wrapper">
                 <form>
                     <div className="input-field">
