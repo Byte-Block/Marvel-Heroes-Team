@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchBar.css";
+import style from "./SearchBar.module.css";
 
 const SearchBar = ({ searchHeroes }) => {
   const onSearch = (event) => {
@@ -8,12 +8,12 @@ const SearchBar = ({ searchHeroes }) => {
   };
 
   return (
-    <nav className="SearchBar">
+    <nav className={style.wrapper}>
       <div className="nav-wrapper">
         <form>
           <div className="input-field">
-            <input id="search" type="search" required />
-            <label className="label-icon" htmlFor="search" onChange={onSearch}>
+            <input id="search" type="search" required onChange={onSearch} />
+            <label className="label-icon" htmlFor="search">
               <i className="material-icons">search</i>
             </label>
             <i className="material-icons">close</i>
