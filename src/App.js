@@ -6,10 +6,10 @@ import "materialize-css/dist/js/materialize.min.js";
 
 import { Container, Row, Col } from "react-materialize";
 
-import { Header } from "./components/Header/Header";
-import { Footer } from "./components/Footer/Footer";
-import { HeroCard } from "./components/HeroCard/HeroCard";
-import { SearchBar } from "./components/SearchBar/SearchBar";
+import { Header } from "./componentssss/Header/Header";
+import { Footer } from "./componentssss/Footer/Footer";
+import { HeroCard } from "./componentssss/HeroCard/HeroCard";
+import { SearchBar } from "./componentssss/SearchBar/SearchBar";
 import { HeroServices } from "./services/HeroServices";
 
 class App extends React.Component {
