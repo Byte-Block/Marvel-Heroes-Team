@@ -15,18 +15,19 @@ const HeroCard = ({ avatar, name }) => {
                 <img
                   className="HeroCard__Image"
                   src={`${avatar}/portrait_small.jpg`}
+                  alt='avatar'
                 />
               </div>
               <div className="card-action HeroCard__Buttons">
                 <button
-                  class="btn waves-effect waves-light"
+                  className="btn waves-effect waves-light"
                   type="submit"
                   name="action"
                 >
                   Info
                 </button>
                 <button
-                  class="btn waves-effect waves-light"
+                  className="btn waves-effect waves-light"
                   type="submit"
                   name="action"
                 >
