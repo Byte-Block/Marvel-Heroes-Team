@@ -9,7 +9,11 @@ const SearchBar = ({ searchHeroes }) => {
     }
 
     return (
+
         <nav className="SearchBar">
+
+        <nav>
+
             <div className="nav-wrapper">
                 <form>
                     <div className="input-field">

@@ -4,6 +4,7 @@ import "./App.css";
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";
 
+
 import { Container, Row, Col } from "react-materialize";
 
 import { HeroCard } from "./components/HeroCard/HeroCard";
@@ -11,6 +12,14 @@ import "./App.css";
 import { Header } from "./components/Header/Header";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 import { FetchHeroes } from "./services/FetchData/FetchHeroes";
+
+import { HeroCard } from "./Components/HeroCard/HeroCard";
+import './App.css';
+import { Header } from './Components/Header/Header';
+import { SearchBar } from './Components/SearchBar/SearchBar';
+import { HeroServices } from './Services/FetchData/HeroServices';
+
+
 // import { MyTeamCards } from './Components/MyTeamCards/MyTeamCards';
 
 class App extends React.Component {
@@ -23,12 +32,20 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+
     FetchHeroes().then((data) => {
       this.setState({
         searchedHeroes: data.data.results,
         filteredHeroes: data.data.results,
       });
     });
+
+    HeroServices()
+      .then(hero => {
+        this.setState({ searchedHeroes: hero, filteredHeroes: hero })
+      })
+
+
   }
 
   searchHeroes = (text) => {
@@ -42,6 +59,7 @@ class App extends React.Component {
       <Container>
         <Header />
         <SearchBar searchHeroes={this.searchHeroes} />
+
         <Row>
           <Col s={9}>
             {this.state.filteredHeroes.map((hero, i) => (
@@ -50,6 +68,12 @@ class App extends React.Component {
           </Col>
         </Row>
       </Container>
+
+        {this.state.filteredHeroes.map(hero => (
+          < HeroCard avatar={hero.avatar} name={hero.name} key={hero.id} />
+        ))}
+      </div >
+
     );
   }
 }
