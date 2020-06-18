@@ -7,6 +7,7 @@ import "materialize-css/dist/js/materialize.min.js";
 import { Container, Row, Col } from "react-materialize";
 
 import { Header } from "./components/Header/Header";
+import { Footer } from "./components/Footer/Footer";
 import { HeroCard } from "./components/HeroCard/HeroCard";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 import { HeroServices } from "./services/fetchData/HeroServices";
@@ -46,6 +47,7 @@ class App extends React.Component {
             ))}
           </Col>
         </Row>
+        <Footer />
       </Container>
     );
   }

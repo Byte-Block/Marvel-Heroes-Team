@@ -10,7 +10,7 @@ const Header = () => {
       alignLinks="right"
       brand={
         <a
-          className={`brand-logo btn ${style.btn}`}
+          className={`brand-logo ${style.btn}`}
           href="https://www.marvel.com/"
           target="_blank"
           rel="noopener noreferrer"
