@@ -10,7 +10,7 @@ import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { HeroCard } from "./components/HeroCard/HeroCard";
 import { SearchBar } from "./components/SearchBar/SearchBar";
-import { HeroServices } from "./services/fetchData/HeroServices";
+import { HeroServices } from "./services/HeroServices";
 
 class App extends React.Component {
   constructor(props) {

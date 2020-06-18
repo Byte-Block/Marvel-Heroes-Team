@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./MyTeamCards.css";
 
 const MyTeamCards = ({ avatar, name }) => {
