@@ -10,7 +10,7 @@ import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { HeroCard } from "./components/HeroCard/HeroCard";
 import { SearchBar } from "./components/SearchBar/SearchBar";
-import { HeroServices } from "./services/HeroServices";
+import { HeroService } from "./services/HeroService";
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    HeroServices().then((hero) => {
+    HeroService().then((hero) => {
       this.setState({ searchedHeroes: hero, filteredHeroes: hero });
     });
   }

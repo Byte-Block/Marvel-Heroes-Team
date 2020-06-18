@@ -1,7 +1,7 @@
 import { Hero } from "../entities/HeroEntity";
 const api_Key = "6df71823e082a7c62f84539374749aec";
 
-const HeroServices = () => {
+const HeroService = () => {
   return fetch(
     `http://gateway.marvel.com/v1/public/characters?apikey=${api_Key}`
   )
@@ -12,4 +12,8 @@ const HeroServices = () => {
     );
 };
 
-export { HeroServices };
+const HeroesNameStartsWithService = ( ) => {
+  return fetch(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=iron&apikey=`)
+}
+
+export { HeroService };
