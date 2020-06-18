@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./App.css";
 
 import "materialize-css/dist/css/materialize.min.css";
@@ -10,7 +11,7 @@ import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { HeroCard } from "./components/HeroCard/HeroCard";
 import { SearchBar } from "./components/SearchBar/SearchBar";
-import { HeroServices } from "./services/HeroServices";
+import { HeroServices } from "./Services/HeroServices";
 
 class App extends React.Component {
   constructor(props) {
@@ -52,5 +53,17 @@ class App extends React.Component {
     );
   }
 }
+
+HeroCard.prototype = {
+  name: PropTypes.string,
+  avatar: PropTypes.string,
+  key: PropTypes.number,
+};
+
+HeroCard.defaultProps = {
+  name: "Stranger",
+  avatar: "image",
+  key: "number",
+};
 
 export default App;
