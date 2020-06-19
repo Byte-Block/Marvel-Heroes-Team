@@ -9,7 +9,9 @@ class HeroService {
       .then((response) => response.json())
       .then((response) => response.data.results)
       .then((response) =>
-        response.map((hero) => new Hero(hero.name, hero.thumbnail.path, hero.id))
+        response.map(
+          (hero) => new Hero(hero.name, hero.thumbnail.path, hero.id)
+        )
       );
   }
 
@@ -18,10 +20,13 @@ class HeroService {
   }
 
   static search(name) {
-    return fetch(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=${name}&apikey=${api_Key}`)
-      .then(response => response.json())
-      .then(heroes => heroes.data.results)
-      .then(heroes => heroes.map(hero => new Hero(hero.name, hero.thumbnail.path, hero.id))
+    return fetch(
+      `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${name}&apikey=${api_Key}`
+    )
+      .then((response) => response.json())
+      .then((heroes) => heroes.data.results)
+      .then((heroes) =>
+        heroes.map((hero) => new Hero(hero.name, hero.thumbnail.path, hero.id))
       );
   }
 }
