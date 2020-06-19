@@ -2,7 +2,6 @@ import React from "react";
 import "./HeroCard.css";
 
 const HeroCard = ({ avatar, name }) => {
-
   return (
     <div className="col s4">
       <div className="card HeroCard">

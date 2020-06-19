@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Switch, Route } from "react-router-dom";
 
 import "materialize-css/dist/css/materialize.min.css";
 import "materialize-css/dist/js/materialize.min.js";
@@ -11,6 +12,7 @@ import { Footer } from "./components/Footer/Footer";
 import { HeroCard } from "./components/HeroCard/HeroCard";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 import { HeroServices } from "./services/HeroServices";
+import { HeroInfo } from "./components/HeroInfo/HeroInfo";
 
 class App extends React.Component {
   constructor(props) {
@@ -37,6 +39,9 @@ class App extends React.Component {
   render() {
     return (
       <Container>
+        <Switch>
+          <Route exact path="/info" component={HeroInfo} />
+        </Switch>
         <Header />
         <SearchBar searchHeroes={this.searchHeroes} />
 
