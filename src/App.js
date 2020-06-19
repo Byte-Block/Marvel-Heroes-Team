@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./App.css";
 
 import "materialize-css/dist/css/materialize.min.css";
@@ -52,5 +53,15 @@ class App extends React.Component {
     );
   }
 }
+
+HeroCard.propTypes = {
+  name: PropTypes.string,
+  avatar: PropTypes.string
+};
+
+HeroCard.defaultProps = {
+  name: "Bruce Wayne",
+  avatar: "https://www.fishandcherries.com/wp-content/uploads/2017/02/Batman-Return-of-the-Caped-Crusaders-2016-movie-poster-200x300.jpg"
+};
 
 export default App;
