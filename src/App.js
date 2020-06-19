@@ -11,7 +11,7 @@ import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { HeroCard } from "./components/HeroCard/HeroCard";
 import { SearchBar } from "./components/SearchBar/SearchBar";
-import { HeroServices } from "./Services/HeroServices";
+import { HeroServices } from "./services/HeroServices";
 
 class App extends React.Component {
   constructor(props) {
@@ -54,16 +54,14 @@ class App extends React.Component {
   }
 }
 
-HeroCard.prototype = {
+HeroCard.propTypes = {
   name: PropTypes.string,
-  avatar: PropTypes.string,
-  key: PropTypes.number,
+  avatar: PropTypes.string
 };
 
 HeroCard.defaultProps = {
-  name: "Stranger",
-  avatar: "image",
-  key: "number",
+  name: "Bruce Wayne",
+  avatar: "https://www.fishandcherries.com/wp-content/uploads/2017/02/Batman-Return-of-the-Caped-Crusaders-2016-movie-poster-200x300.jpg"
 };
 
 export default App;
