@@ -12,8 +12,10 @@ const HeroService = () => {
     );
 };
 
-const HeroesNameStartsWithService = ( ) => {
+const HeroesNameStartsWithService = () => {
   return fetch(`https://gateway.marvel.com/v1/public/characters?nameStartsWith=iron&apikey=`)
 }
 
 export { HeroService };
+
+//fixing services folder name to lower caps on remote master
