@@ -11,28 +11,28 @@ import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
 import { HeroCard } from "./components/HeroCard/HeroCard";
 import { SearchBar } from "./components/SearchBar/SearchBar";
-import { HeroServices } from "./services/HeroServices";
+import { HeroesService, HeroesNameStartsWithService } from "./services/HeroService";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       searchedHeroes: [],
-      filteredHeroes: [],
+      heroesNameStartsWith: []
     };
   }
 
   componentDidMount() {
-    HeroServices().then((hero) => {
-      this.setState({ searchedHeroes: hero, filteredHeroes: hero });
+    HeroesService().then((hero) => {
+      this.setState({ searchedHeroes: hero });
     });
   }
 
   searchHeroes = (text) => {
-    const filtered = this.state.searchedHeroes.filter((hero) => {
-      return hero.name.toLowerCase().includes(text);
-    });
-    this.setState({ filteredHeroes: filtered });
+    HeroesNameStartsWithService(text)
+      .then(hero => this.setState({
+        heroesNameStartsWith: hero
+      }, () => console.log(this.state.heroesNameStartsWith)));
   };
 
   render() {
@@ -40,12 +40,18 @@ class App extends React.Component {
       <Container>
         <Header />
         <SearchBar searchHeroes={this.searchHeroes} />
-
         <Row>
           <Col s={9}>
-            {this.state.filteredHeroes.map((hero) => (
-              <HeroCard name={hero.name} avatar={hero.avatar} key={hero.id} />
-            ))}
+            {
+              this.state.heroesNameStartsWith.length ?
+                this.state.heroesNameStartsWith.map((hero) => (
+                  <HeroCard name={hero.name} avatar={hero.avatar} key={hero.id} />
+                ))
+                :
+                this.state.searchedHeroes.map((hero) => (
+                  <HeroCard name={hero.name} avatar={hero.avatar} key={hero.id} />
+                ))
+            }
           </Col>
         </Row>
         <Footer />
