@@ -11,10 +11,11 @@ class HeroInfo extends React.Component {
 
   fetchSingleHero = (id) => {
     return fetch(
-      `http://gateway.marvel.com/v1/public/characters/1017100?apikey=6df71823e082a7c62f84539374749aec`
+      `http://gateway.marvel.com/v1/public/characters/${this.props.match.params.id}?apikey=6df71823e082a7c62f84539374749aec`
     )
       .then((response) => response.json())
-      .then((id) => console.log(id));
+      .then((response) => response.data.results)
+      .then((id) => this.setState({ hero: id }));
   };
 
   componentDidMount() {

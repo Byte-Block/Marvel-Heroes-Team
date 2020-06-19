@@ -18,7 +18,7 @@ class App extends React.Component {
       <Container>
         <Header />
         <Switch>
-          <Route exact path="/info" component={HeroInfo} />
+          <Route exact path="/info/:id" component={HeroInfo} />
           <Route exact path="/" component={Home} />
         </Switch>
         <Footer />
