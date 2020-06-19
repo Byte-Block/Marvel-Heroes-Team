@@ -4,7 +4,6 @@ import style from "./SearchBar.module.css";
 
 const SearchBar = ({ searchHeroes }) => {
   const onSearch = (event) => {
-    console.log(event.charCode);
     if (event.charCode === 13) {
       const text = event.target.value;
       searchHeroes(text);
