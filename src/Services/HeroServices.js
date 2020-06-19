@@ -13,3 +13,5 @@ const HeroServices = () => {
 };
 
 export { HeroServices };
+
+//fixing services folder name to lower caps on remote master
