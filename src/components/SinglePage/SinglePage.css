@@ -1,0 +1,11 @@
+.infoPage__logo {
+    width: 60px;
+}
+
+.infoPage__return {
+    text-align: end;
+}
+
+.infoPage__name {
+    text-align: center;
+}
