@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./HeroCard.css";
+import {Link} from 'react-router-dom';
 
-const HeroCard = ({ avatar, name }) => {
+const HeroCard = ({ id, avatar, name }) => {
 
   return (
     <div className="col s4">
@@ -20,13 +21,14 @@ const HeroCard = ({ avatar, name }) => {
           />
         </div>
         <div className="card-action HeroCard__Buttons">
-          <button
+          <Link to={`/infopage/${id}`}><button
             className="btn waves-effect waves-light"
             type="submit"
             name="action"
           >
             Info
           </button>
+          </Link>
           <button
             className="btn waves-effect waves-light"
             type="submit"

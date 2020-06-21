@@ -14,8 +14,16 @@ class HeroService {
       );
   }
 
-  static fetch(id) {
-    // fetch single hero
+  static fetchInfo(id) {
+    return axios
+    .get(`https://gateway.marvel.com:443/v1/public/characters/${id}?apikey=${api_Key}`)
+    .then((response)=>response)
+  }
+
+  static fetchComics(id){
+    return axios
+    .get(`https://gateway.marvel.com:443/v1/public/characters/${id}/comics?format=comic&formatType=comic&apikey=${api_Key}`)
+    .then(response=>response)
   }
 
   static search(name) {
