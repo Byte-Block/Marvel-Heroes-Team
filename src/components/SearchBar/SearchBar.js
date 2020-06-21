@@ -4,9 +4,14 @@ import style from "./SearchBar.module.css";
 
 const SearchBar = ({ searchHeroes }) => {
   const onSearch = (event) => {
-    if (event.charCode === 13) {
-      const text = event.target.value;
-      searchHeroes(text);
+    try {
+      if (event.charCode === 13) {
+        const text = event.target.value;
+        searchHeroes(text);
+      }
+    } catch (error) {
+      console.log("Error: ", error);
+      alert("Error: ", error);
     }
   };
 

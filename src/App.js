@@ -8,6 +8,7 @@ import "materialize-css/dist/js/materialize.min.js";
 import { Home } from "./components/Home/Home";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/Footer/Footer";
+import { ErrorBoundary } from "./shared/ErrorBoundary";
 import { SinglePage } from "./components/SinglePage/SinglePage";
 
 class App extends React.Component {
@@ -15,9 +16,13 @@ class App extends React.Component {
     return (
       <Container>
         <Header />
-        <Home />
+        <ErrorBoundary>
+          <Home />
+        </ErrorBoundary>
         <Footer />
-        <SinglePage />
+        <ErrorBoundary>
+          <SinglePage />
+        </ErrorBoundary>
       </Container>
     );
   }
