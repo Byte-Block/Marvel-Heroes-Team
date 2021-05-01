@@ -1,56 +1,45 @@
-import React from 'react';
-import { Row, Col } from 'react-materialize';
-import { HeroCard } from '../HeroCard/HeroCard';
-import { SearchBar } from '../SearchBar/SearchBar';
+import React, { useEffect, useState } from "react";
+import { Row, Col } from "react-materialize";
+import { HeroCard } from "../HeroCard/HeroCard";
+import { SearchBar } from "../SearchBar/SearchBar";
 import { HeroService } from "../../services/HeroService";
 
-class Home extends React.Component {
-    constructor(props) {
-        super(props)
+const Home = () => {
+  const [heroes, setHeroes] = useState([]);
+ 
+  const fetchHeroes = () => {
+    HeroService.fetchAll().then((heroes) => {
+      setHeroes(heroes);
+    });
+  };
 
-        this.state = {
-            heroes: [],
-        }
+  useEffect(() => {
+    fetchHeroes();
+  }, []);
 
-        this.searchHeroes = this.searchHeroes.bind(this);
-    }
+  const searchHeroes = (query) => {
+    HeroService.search(query).then((heroes) => {
+      this.setState({ heroes });
+    });
+  };
 
-    componentDidMount() {
-        this.fetchHeroes();
-    }
-
-    fetchHeroes() {
-        HeroService.fetchAll().then((heroes) => {
-            this.setState({ heroes });
-        });
-    }
-
-    searchHeroes(query) {
-        HeroService.search(query).then((heroes) => {
-            this.setState({ heroes });
-        });
-    }
-
-    render() {
-        return (
-            <>
-                <SearchBar searchHeroes={this.searchHeroes} />
-                <Row>
-                    <Col s={9}>
-                        {
-                            this.state.heroes.map((hero) => (
-                                <HeroCard
-                                id={hero.id}
-                                name={hero.name}
-                                avatar={hero.avatar}
-                                key={hero.id} />
-                            ))
-                        }
-                    </Col>
-                </Row>
-            </>
-        );
-    }
-}
+  return (
+    <>
+      <SearchBar searchHeroes={searchHeroes} />
+      <Row>
+        <Col s={9}>
+          {heroes.map((hero) => (
+            <HeroCard
+              id={hero.id}
+              name={hero.name}
+              avatar={hero.avatar}
+              key={hero.id}
+            />
+          ))}
+        </Col>
+      </Row>
+    </>
+  );
+};
 
 export { Home };
